@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Entre em Contato</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+    <link  href="css/fotorama.css" type="text/css" rel="stylesheet" />
+    <script src="js/fotorama.js"></script>
+    <title>Nightmare Project - Aluguel de games! </title>
+    <script type="text/javascript">
+        $(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top}, 800);
+            });
+        });
+    </script>
+    <script language="JavaScript" >
+        function enviardados(){
+            if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8) {
+                alert( "Preencha campo Nome Completo corretamente!" );
+                document.dados.tx_nome.focus();
+                return false;
+            }
+            if( document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 ) {
+                alert( "Preencha campo E-MAIL corretamente!" );
+                document.dados.tx_email.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+
+        <nav id="menu">
+            
+            <ul>
+                <li onmouseover="mudafoto('_imagens/home-03-resize-125.png')" onmouseout="mudafoto('_imagens/contato-resize-125.png')"><a href="index.html">Inicio</a></li>
+                      
+                <li onmouseover="mudafoto('_imagens/contato-resize-125.png')" onmouseout="mudafoto('_imagens/contato-resize-125.png')"><a href="contato.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header id="cabecalho-corpo">
+        <hgroup>
+            <p id="caminho"></p>
+            <h1>Entre em Contato</h1>
+            
+        </hgroup>
+    </header>
+
+<p class="texto">Entre em contato conosco e dê a opnião sobre este site e sobre as informações encontradas aqui, Será um prazer contar com sua opnião!</p>
+
+<table>
+    <form name="contato" method="POST" action="incluir.php">
+    <tr> <td> Nome: </td>   <td colspan="2"><input type="text" name="nome" id="nome" value="" size="50"></td>  </tr>
+	<tr> <td> Cpf:</td>  <td colspan="2"><input type="text" name="cpf" id="cpf" value=""></td>  </tr>
+	<tr> <td> Data Nascimento:</td>  <td colspan="2"><input type="date" name="datanasc" id="datanasc" value=""></td>  </tr>
+    <tr> <td> Telefone Residencial:</td>  <td colspan="2"><input type="text" name="telres" id="telres" value=""></td>  </tr>
+    <tr> <td> Telefone Celular:</td>  <td colspan="2"><input type="text" name="telcel" id="telcel" value=""></td>  </tr>
+	<tr> <td> Email:</td>  <td colspan="2"><input type="text" name="email" id="email" value=""></td>  </tr>
+	<tr> <td> Login: </td>  <td colspan="2"><input type="text" name="login" id="login" value=""></td>  </tr>
+	<tr> <td> Senha: </td>  <td colspan="2"><input type="password" name="senha" id="senha" value=""></td>  </tr>
+	<tr> <td> Endereco:</td>  <td colspan="2"><input type="text" name="endereco" id="endereco" value=""></td>  </tr>
+	<tr> <td> Numero Endereco:</td>  <td colspan="2"><input type="text" name="num_end" id="num_end" value=""></td>  </tr>
+	<tr> <td> Complemento:</td>  <td colspan="2"><input type="text" name="complemento" id="complemento" value=""></td>  </tr>
+	<tr> <td> Bairro:</td>  <td colspan="2"><input type="text" name="bairro" id="bairro" value=""></td>  </tr>
+	<tr> <td> Cidade:</td>  <td colspan="2"><input type="text" name="cidade" id="cidade" value=""></td>  </tr>
+    <tr> <td> Cep: </td>  <td colspan="2"><input type="text" name="cep" value="" size="50"></td>  </tr>
+    
+        <!--<td>Estado: </td>
+        <td colspan="2">
+            <select>
+                <option>- Escolha uma Opção -</option>
+                <option>Acre (AC)</option>
+                <option>Alagoas (AL)</option>
+                <option>Amapá (AP)</option>
+                <option>Amazonas (AM)</option>
+                <option>Bahia (BA)</option>
+                <option>Ceará (CE)</option>
+                <option>Distrito Federal (DF)</option>
+                <option>Espírito Santo (ES)</option>
+                <option>Goiás (GO)</option>
+                <option>Maranhão (MA)</option>
+                <option>Mato Grosso (MT)</option>
+                <option>Mato Grosso do Sul (MS)</option>
+                <option>Minas Gerais (MG)</option>
+                <option>Pará (PA) </option>
+                <option>Paraíba (PB)</option>
+                <option>Paraná (PR)</option>
+                <option>Pernambuco (PE)</option>
+                <option>Piauí (PI)</option>
+                <option>Rio de Janeiro (RJ)</option>
+                <option>Rio Grande do Norte (RN)</option>
+                <option>Rio Grande do Sul (RS)</option>
+                <option>Rondônia (RO)</option>
+                <option>Roraima (RR)</option>
+                <option>Santa Catarina (SC)</option>
+                <option>São Paulo (SP)</option>
+                <option>Sergipe (SE)</option>
+                <option>Tocantins (TO)</option>
+            </select>
+        </td>
+    </tr>
+        <tr><td>Qual você prefere?</td> <td><input type="checkbox" name="">HD Óptico</td>  <td><input type="checkbox" name="">HD SSD</td></tr>
+        <tr><td>Comentário</td> <td colspan="2"><textarea cols="40" rows="5">Digite algum comentário aqui</textarea></td>        </tr>-->
+    <tr><td colspan="3"><input type="reset" name="limpar" value="Limpar Formulário"><input type="submit" name="limpar" value="Enviar Formulário"></td></tr>
+    </form>
+</table>
+    <br>
+    <br>
+    <footer id="rodape">
+        <p>&copy; Copyright 2018 - by Paul Cobrux</p>
+        <p><a href="" target="_blank">Facebook</a> | <a href="" target="_blank">Twitter</a></p>
+    </footer>
+</div>
+</body>
+</html>
